@@ -52,7 +52,17 @@ def rmse(y_hat: pd.Series, y: pd.Series) -> float:
     r = r / n
 
     return r**(1/2)
+def mse(y_hat: pd.Series, y: pd.Series) -> float:
+    """
+    Function to calculate the mean-squared-error(mse)
+    """
+    n = len(y)
+    r = y - y_hat
+    r = r ** 2
+    r = r.sum()
+    r = r / n
 
+    return r
 
 def mae(y_hat: pd.Series, y: pd.Series) -> float:
     """
