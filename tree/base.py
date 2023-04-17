@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import json
 from tree.utils import entropy, information_gain, gini_index, get_mse
 
-numpy.seterr(divide = 'ignore') 
+np.seterr(divide = 'ignore') 
 
 np.random.seed(42)
 
@@ -169,9 +169,9 @@ class DecisionTree:
                             break
                     else:
                         if split_val.values[0] <= list(current_node[split_feature[0]].keys())[0]:
-                            current_node = current_node[split_feature[0]][list(current_node[split_feature[0]].keys())[0]]["L"]
+                            current_node = current_node[split_feature[0]][list(current_node[split_feature[0]].keys())[0]][" <= "]
                         else:
-                            current_node = current_node[split_feature[0]][list(current_node[split_feature[0]].keys())[0]]["R"]
+                            current_node = current_node[split_feature[0]][list(current_node[split_feature[0]].keys())[0]][" > "]
                 else:
                     predictions.append(current_node)
                     break
