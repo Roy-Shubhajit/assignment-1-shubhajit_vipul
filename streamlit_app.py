@@ -43,10 +43,9 @@ st.write("Bias: ", (df[trg_col].mean() - y_pred.mean())**2)
 st.write("Variance: ", y_pred.var())
 st.write("Bias + Variance: ", (df[trg_col].mean() - y_pred.mean())**2 + y_pred.var())
 
-st.write("The plot below shows the bias variance tradeoff for a decision tree model with varying tree depth")
+st.write("The plot below shows the actual points and the predicted points for a decision tree model with varying tree depth")
 
 #scatter plot predicted points
-st.write("Predicted Points")
 fig, ax = plt.subplots()
 ax.scatter(df.drop([trg_col], axis = 1), y_pred, color='red', marker='o', label='Predicted')
 ax.scatter(df.drop([trg_col], axis = 1), df[trg_col], color='black', marker='*', label='Actual')
