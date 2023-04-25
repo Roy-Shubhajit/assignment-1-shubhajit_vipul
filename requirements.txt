@@ -3,5 +3,4 @@ numpy
 streamlit
 scikit-learn
 pandas
-json
 typing
